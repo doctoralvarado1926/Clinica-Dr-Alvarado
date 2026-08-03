@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Pedro Alvarado - Hemato-Oncólogo Pediatra</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-teal: #0d9488;
+            --primary-teal-dark: #0f766e;
+            --primary-mint: #10b981;
+            --mint-light: #ecfdf5;
+            --navy-deep: #0f172a;
+            --slate-soft: #475569;
+            --bg-light: #f8fafc;
+            --emergency-red: #dc2626;
+            --whatsapp-green: #25d366;
+            --whatsapp-dark: #128c7e;
+            --waze-blue: #33ccff;
+            --waze-dark: #1b8aed;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--navy-deep);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Top emergency bar */
+        .top-emergency-bar {
+            background-color: var(--navy-deep);
+            color: #ffffff;
+            font-size: 0.9rem;
+            padding: 8px 0;
+            border-bottom: 3px solid var(--primary-teal);
+        }
+
+        /* Navbar */
+        .custom-navbar {
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--navy-deep);
+            font-size: 1.25rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--slate-soft);
+            margin: 0 4px;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-teal);
+        }
+
+        /* Hero Section Extendido con foto1 destacada */
+        .hero-section {
+            background: linear-gradient(135deg, #e0f2fe 0%, #ecfdf5 50%, #f0fdf4 100%);
+            padding: 70px 0 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            background-color: #ffffff;
+            color: var(--primary-teal-dark);
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-title {
+            font-size: 3.1rem;
+            font-weight: 800;
+            line-height: 1.18;
+            color: var(--navy-deep);
+        }
+
+        /* MARCO Y TAMAÑO AMPLIADO PARA FOTO 1 */
+        .hero-banner-container {
+            position: relative;
+            border-radius: 28px;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.14);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-banner-container:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 60px rgba(13, 148, 136, 0.18);
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            height: auto;
+            max-height: 550px; /* Tamaño más amplio */
+            object-fit: contain;
+            border-radius: 20px;
+            background-color: #ffffff;
+            display: block;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary-teal);
+            transform: translateY(-3px);
+        }
+
+        /* Frames / Tarjetas de Especialidad */
+        .frame-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .frame-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            transition: background 0.3s;
+        }
+
+        .frame-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(13, 148, 136, 0.12);
+            border-color: rgba(13, 148, 136, 0.3);
+        }
+
+        .frame-card:hover::before {
+            background: var(--primary-teal);
+        }
+
+        .icon-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: var(--mint-light);
+            color: var(--primary-teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+        }
+
+        /* Síntomas */
+        .symptoms-section {
+            background-color: #ffffff;
+            border-radius: 28px;
+            padding: 45px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+            border: 2px solid #e2e8f0;
+        }
+
+        .symptom-item {
+            background-color: var(--bg-light);
+            padding: 18px 20px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 600;
+            border-left: 5px solid var(--primary-teal);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .symptom-item:hover {
+            background-color: var(--mint-light);
+            transform: translateX(6px);
+        }
+
+        /* Doctor Profile Card */
+        .doctor-card {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            border-radius: 28px;
+            overflow: hidden;
+            padding: 45px;
+            position: relative;
+        }
+
+        .doctor-avatar {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 6px solid var(--primary-teal);
+            object-fit: cover;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            transition: transform 0.3s ease;
+        }
+
+        .doctor-avatar:hover {
+            transform: scale(1.04);
+        }
+
+        /* Buttons */
+        .btn-teal {
+            background-color: var(--primary-teal);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 26px;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-teal:hover {
+            background-color: var(--primary-teal-dark);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(13, 148, 136, 0.3);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-dark);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-emergency {
+            background-color: var(--emergency-red);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-emergency:hover {
+            background-color: #b91c1c;
+            color: #ffffff;
+            box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+        }
+
+        .btn-maps {
+            background-color: #4285f4;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-maps:hover {
+            background-color: #2b72e2;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(66, 133, 244, 0.35);
+        }
+
+        .btn-waze {
+            background-color: var(--waze-blue);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-waze:hover {
+            background-color: var(--waze-dark);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(51, 204, 255, 0.4);
+        }
+
+        .btn-outline-custom {
+            border: 2px solid var(--primary-teal);
+            color: var(--primary-teal);
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 12px;
+            background: transparent;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: var(--primary-teal);
+            color: #ffffff;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-green);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: #ffffff;
+            background-color: var(--whatsapp-dark);
+        }
+
+        /* Floating Chatbot Widget */
+        .chatbot-toggler {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background-color: var(--primary-teal);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 25px rgba(13, 148, 136, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .chatbot-toggler:hover {
+            transform: scale(1.08);
+            background-color: var(--primary-teal-dark);
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 105px;
+            right: 30px;
+            width: 380px;
+            max-width: 90vw;
+            height: 520px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+            border: 1px solid #e2e8f0;
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-header {
+            background: var(--navy-deep);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-teal);
+            object-fit: cover;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .chat-msg {
+            max-width: 82%;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 0.92rem;
+            line-height: 1.4;
+        }
+
+        .chat-msg.bot {
+            background: #ffffff;
+            color: var(--navy-deep);
+            border: 1px solid #e2e8f0;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .chat-msg.user {
+            background: var(--primary-teal);
+            color: #ffffff;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 5px;
+        }
+
+        .chat-option-btn {
+            background-color: var(--mint-light);
+            color: var(--primary-teal-dark);
+            border: 1px solid rgba(13, 148, 136, 0.3);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chat-option-btn:hover {
+            background-color: var(--primary-teal);
+            color: #ffffff;
+        }
+
+        .chat-footer {
+            padding: 10px;
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-footer input {
+            border-radius: 20px;
+            border: 1px solid #cbd5e1;
+            padding: 8px 14px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            .hero-banner-img {
+                max-height: 420px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .symptoms-section {
+                padding: 25px;
+            }
+            .doctor-avatar {
+                width: 150px;
+                height: 150px;
+            }
+            .whatsapp-float {
+                bottom: 25px;
+                left: 20px;
+                width: 52px;
+                height: 52px;
+                font-size: 1.7rem;
+            }
+            .chatbot-toggler {
+                bottom: 25px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Emergency Contact Bar -->
+    <div class="top-emergency-bar">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <span class="badge bg-danger"><i class="fa-solid fa-triangle-exclamation me-1"></i> URGENCIA MÉDICA</span>
+                <span>Atención Urgente: <strong><a href="tel:58041458" class="text-white text-decoration-none"><i class="fa-solid fa-phone me-1"></i>5804-1458</a></strong></span>
+            </div>
+            <div class="d-none d-md-flex align-items-center gap-3">
+                <span><i class="fa-brands fa-whatsapp me-1 text-success"></i> WhatsApp: <strong><a href="https://wa.me/50222329243" target="_blank" class="text-white text-decoration-none">2232-9243</a></strong></span>
+                <span><i class="fa-solid fa-location-dot me-1 text-teal"></i> Zona 1, Ciudad de Guatemala </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="fa-solid fa-heart-pulse text-teal fs-3"></i>
+                <div>
+                    <div>Dr. Pedro Alvarado</div>
+                    <small class="d-block text-muted fw-normal fs-6" style="margin-top:-4px;">Hemato-Oncólogo Pediatra</small>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-1">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#especialidades">Especialidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sintomas">Síntomas de Alerta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#doctor">Sobre el Doctor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-teal btn-sm text-white" href="#citas"><i class="fa-regular fa-calendar-plus me-1"></i> Agendar Cita</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION ENFOCADO Y AMPLIADO -->
+    <section id="inicio" class="hero-section">
+        <div class="container position-relative" style="z-index:1;">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-6">
+                    <div class="hero-badge mb-3">
+                        <i class="fa-solid fa-shield-halved text-success"></i> Atención Especializada Infantil
+                    </div>
+                    <h1 class="hero-title mb-3">
+                        Cuidamos a tus pequeños con <span class="text-success">empatía</span> y <span style="color:var(--primary-teal);">profesionalismo</span>.
+                    </h1>
+                    <p class="lead text-secondary mb-4">
+                        Diagnóstico certero y tratamiento de enfermedades de la sangre y cáncer infantil. Atención médica integral con el más alto nivel científico y humano.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="https://wa.me/50222329243?text=Hola%20Dr.%20Pedro%20Alvarado,%20quisiera%20solicitar%20información%20para%20una%20cita" target="_blank" class="btn btn-whatsapp btn-lg">
+                            <i class="fa-brands fa-whatsapp me-2 fs-5"></i> Cita por WhatsApp
+                        </a>
+                        <a href="tel:58041458" class="btn btn-emergency btn-lg">
+                            <i class="fa-solid fa-truck-medical me-2"></i> Emergencias (5804-1458)
+                        </a>
+                    </div>
+
+                    <!-- Datos destacados -->
+                    <div class="row g-2 mb-4">
+                        <div class="col-6 col-sm-4">
+                            <div class="stat-card text-center">
+                                <i class="fa-solid fa-user-doctor text-teal fs-4 mb-1"></i>
+                                <small class="d-block text-muted">Sub-Especialista</small>
+                                <strong class="fs-6">Pediatría</strong>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <div class="stat-card text-center">
+                                <i class="fa-solid fa-kit-medical text-danger fs-4 mb-1"></i>
+                                <small class="d-block text-muted">Urgencias</small>
+                                <strong class="fs-6">24/7 Disponible</strong>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="stat-card text-center">
+                                <i class="fa-solid fa-vial-virus text-primary fs-4 mb-1"></i>
+                                <small class="d-block text-muted">Servicio Especial</small>
+                                <strong class="fs-6">Células Madre</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center gap-2 pt-3 border-top border-secondary-subtle">
+                        <button onclick="openGoogleMaps()" class="btn btn-maps btn-sm">
+                            <i class="fa-solid fa-map-location-dot me-1"></i> Google Maps
+                        </button>
+                        <button onclick="openWaze()" class="btn btn-waze btn-sm">
+                            <i class="fa-brands fa-waze me-1"></i> Waze
+                        </button>
+                        <a href="https://www.facebook.com/profile.php?id=61571694187760" target="_blank" class="btn btn-outline-custom btn-sm">
+                            <i class="fa-brands fa-facebook-f me-1"></i> Facebook
+                        </a>
+                        <a href="mailto:contacto@drpedroalvarado.com" class="btn btn-outline-secondary btn-sm rounded-pill">
+                            <i class="fa-regular fa-envelope me-1"></i>  doctoralvarado1926@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Marco Foto 1 PNG Expandido -->
+                <div class="col-lg-6">
+                    <div class="hero-banner-container">
+                        <img src="foto1.png" alt="Dr. Pedro Alvarado Hemato Oncologo Pediatra - Servicios e Información" class="hero-banner-img">
+                        <div class="p-3 text-center bg-white rounded-3 mt-2 border shadow-sm">
+                            <small class="text-muted fw-semibold"><i class="fa-solid fa-circle-check text-success me-1"></i> Banco de Sangre Dr. Alvarado S.A. | Terapia con Células Madre</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRAMES / ESPECIALIDADES -->
+    <section id="especialidades" class="py-5">
+        <div class="container py-4">
+            <div class="text-center max-width-700 mx-auto mb-5">
+                <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fs-6 mb-2">Áreas de Especialización</span>
+                <h2 class="fw-bold fs-1">Tratamiento Médico Integral para Niños</h2>
+                <p class="text-muted">Brindamos diagnóstico oportuno y acompañamiento médico continuo en padecimientos complejos de la infancia.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="frame-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Hematología Pediátrica</h4>
+                        <p class="text-muted fs-6">Diagnóstico y manejo de anemias severas, alteraciones de plaquetas, coagulación y trastornos de glóbulos rojos o blancos.</p>
+                        <a href="#citas" class="text-teal text-decoration-none fw-semibold">Consultar área <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="frame-card">
+                        <div class="icon-box" style="background:#f8fbbafb; color:#f0e811;">
+                            <i class="fa-solid fa-ribbon"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Oncología Pediátrica</h4>
+                        <p class="text-muted fs-6">Atención oportuna del cáncer infantil (Leucemias, Linfomas y tumores sólidos). Protocolos de tratamiento avanzados y seguros.</p>
+                        <a href="#citas" class="text-teal text-decoration-none fw-semibold">Consultar área <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="frame-card">
+                        <div class="icon-box" style="background:#e0f2fe; color:#0284c7;">
+                            <i class="fa-solid fa-dna"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Trasplante de Médula Ósea</h4>
+                        <p class="text-muted fs-6">Evaluación y seguimiento especializado para pacientes candidatos a trasplante progenitor hematopoyético.</p>
+                        <a href="#citas" class="text-teal text-decoration-none fw-semibold">Consultar área <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="frame-card">
+                        <div class="icon-box" style="background:#fef3c7; color:#d97706;">
+                            <i class="fa-solid fa-child-reaching"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3">Pediatría & Banco de Sangre</h4>
+                        <p class="text-muted fs-6">Cuidado de la salud infantil general, terapia con células madre y asesoría en conservación de sangre periférica.</p>
+                        <a href="#citas" class="text-teal text-decoration-none fw-semibold">Consultar área <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SÍNTOMAS DE ALERTA -->
+    <section id="sintomas" class="py-5 bg-light">
+        <div class="container">
+            <div class="symptoms-section">
+                <div class="row align-items-center gy-4">
+                    <div class="col-lg-5">
+                        <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-3 py-2 rounded-pill fw-semibold mb-3">¿Cuándo acudir al especialista?</span>
+                        <h2 class="fw-bold fs-1 mb-3">Signos y Síntomas de Atención Inmediata</h2>
+                        <p class="text-secondary mb-4">Si tu hijo presenta alguna de estas condiciones de manera recurrente o sin motivo aparente, es fundamental agendar una evaluación médica especializada.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="https://wa.me/50258041458?text=Hola%20Dr.%20Alvarado,%20tengo%20una%20urgencia%20médica%20con%20mi%20hijo/a" target="_blank" class="btn btn-whatsapp">
+                                <i class="fa-brands fa-whatsapp me-2"></i> WhatsApp Urgente
+                            </a>
+                            <a href="tel:58041458" class="btn btn-emergency">
+                                <i class="fa-solid fa-phone-volume me-2"></i> Llamar 5804-1458
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="symptom-item" onclick="selectSymptom('Sangrados')">
+                                    <i class="fa-solid fa-droplet text-danger fs-4"></i>
+                                    <div>
+                                        <div>Sangrados Recurrentes</div>
+                                        <small class="text-muted font-normal">Nariz, encías, articulaciones u órganos.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="symptom-item" onclick="selectSymptom('Moretones')">
+                                    <i class="fa-solid fa-circle-exclamation text-warning fs-4"></i>
+                                    <div>
+                                        <div>Moretones Inusuales</div>
+                                        <small class="text-muted font-normal">Hematomas o petequias sin causa o golpe.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="symptom-item" onclick="selectSymptom('Masas')">
+                                    <i class="fa-solid fa-disease text-primary fs-4"></i>
+                                    <div>
+                                        <div>Masas en Cuello o Cuerpo</div>
+                                        <small class="text-muted font-normal">Aumento de tamaño de ganglios linfáticos.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="symptom-item" onclick="selectSymptom('Evaluación Oncológica')">
+                                    <i class="fa-solid fa-child text-success fs-4"></i>
+                                    <div>
+                                        <div>Sospecha de Cáncer Infantil</div>
+                                        <small class="text-muted font-normal">Fiebre inexplicable, palidez marcada o fatiga.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE EL DOCTOR (USANDO foto2.jpg) -->
+    <section id="doctor" class="py-5">
+        <div class="container py-4">
+            <div class="doctor-card">
+                <div class="row align-items-center gy-4">
+                    <div class="col-md-4 text-center">
+                        <div class="mb-3">
+                            <!-- FOTO 2 EN FORMATO JPG -->
+                            <img src="foto2.jpg" alt="Foto del Dr. Pedro Alvarado Reyes" class="doctor-avatar">
+                        </div>
+                        <h4 class="fw-bold mb-1">Dr. Pedro Augusto Alvarado Reyes</h4>
+                        <p class="text-teal mb-0" style="color:var(--primary-mint);">Hemato-Oncólogo Pediatra</p>
+                    </div>
+                    <div class="col-md-8">
+                        <span class="badge bg-teal-subtle text-success px-3 py-2 rounded-pill fw-semibold mb-3" style="background:rgba(16, 185, 129, 0.15);">Trayectoria y Excelencia</span>
+                        <h2 class="fw-bold mb-3">Vocación Humana al Servicio de la Niñez</h2>
+                        <p class="lead opacity-90 mb-4">
+                            Con amplia formación en pediatría, hematología, oncología y trasplante de médula ósea, el Dr. Pedro Alvarado se dedica a ofrecer diagnósticos certeros y tratamientos de vanguardia para los niños y familias que atraviesan momentos difíciles.
+                        </p>
+                        
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6 d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                                <span>Atención personalizada y empática</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                                <span>Banco de Sangre & Células Madre</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                                <span>Disponibilidad para emergencias 24/7</span>
+                            </div>
+                            <div class="col-sm-6 d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-success fs-5"></i>
+                                <span>Instalaciones adecuadas para niños</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#citas" class="btn btn-teal"><i class="fa-regular fa-calendar-check me-2"></i> Solicitar Consulta</a>
+                            <a href="https://wa.me/50222329243" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp me-2"></i> Chatear por WhatsApp</a>
+                            <a href="https://www.facebook.com/profile.php?id=61571694187760" target="_blank" class="btn btn-outline-light"><i class="fa-brands fa-facebook me-2"></i> Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENDAMIENTO Y CITAS -->
+    <section id="citas" class="py-5 bg-light">
+        <div class="container py-3">
+            <div class="row gy-5">
+                <div class="col-lg-7">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">Reserva de Atenciones</span>
+                        <h2 class="fw-bold mb-3">Agendar Consulta Médica</h2>
+                        <p class="text-muted mb-4">Completa el siguiente formulario para solicitar la cita de tu pequeño. Nuestro equipo de recepción confirmará a la brevedad.</p>
+
+                        <form id="appointmentForm" onsubmit="handleFormSubmit(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Nombre del Padre / Tutor</label>
+                                    <input type="text" id="parentName" class="form-control form-control-lg fs-6" placeholder="Ej. Ana Martínez" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Teléfono de Contacto</label>
+                                    <input type="tel" id="parentPhone" class="form-control form-control-lg fs-6" placeholder="Ej. 5555-1234" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Nombre del Paciente (Niño/a)</label>
+                                    <input type="text" id="childName" class="form-control form-control-lg fs-6" placeholder="Ej. Carlitos Martínez" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Edad del Paciente</label>
+                                    <input type="text" id="childAge" class="form-control form-control-lg fs-6" placeholder="Ej. 5 años" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Motivo principal de consulta</label>
+                                    <select class="form-select form-select-lg fs-6" id="consultReason" onchange="toggleOtherReasonField()" required>
+                                        <option value="" selected disabled>Selecciona una opción...</option>
+                                        <option value="Sangrados">Sangrados (nariz, encías, etc.)</option>
+                                        <option value="Moretones">Moretones sin causa aparente</option>
+                                        <option value="Masas">Masas / Aumento de ganglios en cuello</option>
+                                        <option value="Evaluación Oncológica">Evaluación Oncológica / Leucemia</option>
+                                        <option value="Trasplante">Asesoría Trasplante de Médula Ósea</option>
+                                        <option value="Consulta General">Consulta Hematológica General</option>
+                                        <option value="Otra">Otra opción / Motivo específico</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 d-none" id="otherReasonContainer">
+                                    <label class="form-label fw-semibold text-primary">Especifica el motivo de tu consulta:</label>
+                                    <input type="text" id="otherReasonText" class="form-control form-control-lg fs-6" placeholder="Escribe aquí el motivo específico...">
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Comentarios o síntomas adicionales</label>
+                                    <textarea id="additionalNotes" class="form-control fs-6" rows="3" placeholder="Describe brevemente el caso..."></textarea>
+                                </div>
+
+                                <div class="col-12 d-flex flex-wrap gap-2 pt-2">
+                                    <button type="submit" class="btn btn-teal btn-lg flex-grow-1">
+                                        <i class="fa-solid fa-paper-plane me-2"></i> Enviar Formulario
+                                    </button>
+                                    <button type="button" onclick="sendFormViaWhatsApp()" class="btn btn-whatsapp btn-lg">
+                                        <i class="fa-brands fa-whatsapp me-2"></i> Enviar por WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="h-100 d-flex flex-column justify-content-between gap-4">
+                        <div class="bg-white p-4 rounded-4 border shadow-sm">
+                            <h4 class="fw-bold mb-3"><i class="fa-solid fa-phone-volume text-teal me-2"></i> Llámanos o Escríbenos</h4>
+                            <p class="text-muted">Si prefieres atención rápida para coordinar tu cita:</p>
+                            
+                            <div class="p-3 bg-light rounded-3 mb-3 border-start border-4 border-success">
+                                <small class="text-muted d-block font-semibold">Citas por WhatsApp o Llamada:</small>
+                                <a href="https://wa.me/50222329243" target="_blank" class="fs-4 fw-bold text-success text-decoration-none d-block">
+                                    <i class="fa-brands fa-whatsapp me-2"></i> 2232-9243
+                                </a>
+                            </div>
+
+                            <div class="p-3 bg-danger-subtle rounded-3 border-start border-4 border-danger">
+                                <small class="text-danger fw-bold d-block">Línea Exclusiva de Emergencias 24h:</small>
+                                <a href="tel:58041458" class="fs-4 fw-bold text-danger text-decoration-none">
+                                    <i class="fa-solid fa-truck-medical me-2"></i> 5804-1458
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-4 border shadow-sm">
+                            <h4 class="fw-bold mb-3"><i class="fa-regular fa-envelope text-teal me-2"></i> Correo Electrónico</h4>
+                            <p class="text-muted">Canal oficial para envío de resultados de laboratorio o expedientes previos:</p>
+                            <a href="mailto:contacto@drpedroalvarado.com" class="btn btn-outline-secondary w-100">
+                                <i class="fa-regular fa-paper-plane me-2"></i> doctorpedroalvarado1926@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN Y MAPAS -->
+    <section id="ubicacion" class="py-5">
+        <div class="container py-3">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-5">
+                    <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold mb-2">Fácil Acceso</span>
+                    <h2 class="fw-bold fs-1 mb-3">Ubicación del Consultorio</h2>
+                    <p class="text-muted mb-4">Ubicados en un punto céntrico y seguro de la ciudad para tu comodidad y tranquilidad.</p>
+
+                    <div class="d-flex align-items-start gap-3 mb-3">
+                        <div class="icon-box flex-shrink-0" style="width:48px; height:48px; font-size:1.2rem;">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Dirección Exacta:</h6>
+                            <p class="text-secondary mb-0">6ta Av 1-03 Zona 1, Frente al Tribunal Supremo Electoral, Guatemala City, Guatemala, 01001.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="icon-box flex-shrink-0" style="width:48px; height:48px; font-size:1.2rem; background:#e0f2fe; color:#0284c7;">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Horarios de Atención:</h6>
+                            <p class="text-secondary mb-0">Lunes a Viernes: Previa Cita<br>Atención de Emergencias: Disponibilidad 24 horas.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2 pt-2">
+                        <button onclick="openGoogleMaps()" class="btn btn-maps btn-lg flex-grow-1">
+                            <i class="fa-solid fa-map-location-dot me-2"></i> NAVEGAR CON MAPS
+                        </button>
+                        <button onclick="openWaze()" class="btn btn-waze btn-lg flex-grow-1">
+                            <i class="fa-brands fa-waze me-2"></i> NAVEGAR CON WAZE
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="rounded-4 overflow-hidden border shadow-sm" style="height: 400px;">
+                        <iframe 
+                            id="gmap_canvas"
+                            src="https://maps.google.com/maps?q=6ta%20Av%201-03%20Zona%201%20Guatemala%20City&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row gy-4 mb-4">
+                <div class="col-lg-5">
+                    <h4 class="fw-bold mb-2">Dr. Pedro Alvarado</h4>
+                    <p class="text-teal mb-3" style="color:var(--primary-mint);">Hemato-Oncólogo Pediatra</p>
+                    <p class="text-secondary small me-lg-4">Especialista en hematología, oncología pediátrica y trasplante de médula ósea. Cuidando el bienestar y la salud de los niños guatemaltecos con máxima dedicación.</p>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <h6 class="fw-bold mb-3 text-uppercase text-light">Contactos Directos</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><i class="fa-brands fa-whatsapp me-2 text-success"></i> WhatsApp / Citas: 2232-9243</li>
+                        <li class="mb-2"><i class="fa-solid fa-truck-medical me-2 text-danger"></i> Emergencias: 5804-1458</li>
+                        <li class="mb-2"><i class="fa-solid fa-location-dot me-2 text-teal"></i> Zona 1, Guatemala City</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h6 class="fw-bold mb-3 text-uppercase text-light">Redes Sociales & Enlaces</h6>
+                    <a href="https://wa.me/50222329243" target="_blank" class="btn btn-whatsapp btn-sm mb-2 d-inline-block me-2">
+                        <i class="fa-brands fa-whatsapp me-1"></i> WhatsApp Directo
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61571694187760" target="_blank" class="btn btn-outline-light btn-sm mb-2 d-inline-block me-2">
+                        <i class="fa-brands fa-facebook me-1"></i> Facebook
+                    </a>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="d-flex flex-wrap justify-content-between align-items-center text-secondary small">
+                <div>&copy; 2026 Clínica Dr. Pedro Alvarado. Todos los derechos reservados.</div>
+                <div>Salud e Investigación Hemato-Oncológica Infantil</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DIRECTO DE WHATSAPP -->
+    <a href="https://wa.me/50222329243?text=Hola%20Dr.%20Pedro%20Alvarado,%20quisiera%20solicitar%20información%20para%20una%20cita" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- INTERACTIVE CHATBOT FLOTANTE -->
+    <div class="chatbot-toggler" onclick="toggleChatWindow()" title="Asistente Virtual Médico">
+        <i class="fa-solid fa-comments"></i>
+    </div>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="d-flex align-items-center gap-2">
+                <!-- foto2.jpg para avatar del bot -->
+                <img src="foto2.jpg" alt="Dr. Pedro" onerror="this.src='foto1.png'">
+                <div>
+                    <strong class="d-block text-white fs-6">Asistente Dr. Alvarado</strong>
+                    <small class="text-success" style="font-size:0.75rem;"><i class="fa-solid fa-circle me-1"></i> En línea ahora</small>
+                </div>
+            </div>
+            <button class="btn-close btn-close-white" onclick="toggleChatWindow()"></button>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <div class="chat-msg bot">
+                ¡Hola! 👋 Bienvenido a la clínica del <strong>Dr. Pedro Alvarado (Hemato-Oncólogo Pediatra)</strong>. ¿En qué te podemos orientar hoy?
+            </div>
+            
+            <div class="chat-options">
+                <button class="chat-option-btn" onclick="sendChatOption('💬 Contactar por WhatsApp')">💬 WhatsApp Directo</button>
+                <button class="chat-option-btn" onclick="sendChatOption('🚗 Cómo llegar con Maps o Waze')">🚗 Ubicación</button>
+                <button class="chat-option-btn" onclick="sendChatOption('📞 Teléfonos de contacto')">📞 Teléfonos</button>
+                <button class="chat-option-btn" onclick="sendChatOption('🩸 Síntomas que atiende')">🩸 Síntomas</button>
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="chatInput" class="form-control" placeholder="Escribe tu consulta..." onkeypress="handleChatKeyPress(event)">
+            <button class="btn btn-teal rounded-circle p-2" style="width:38px; height:38px;" onclick="sendCustomMessage()">
+                <i class="fa-solid fa-paper-plane" style="font-size:0.85rem;"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- JS Scripts & Interactive Logic -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const LAT = 14.6542125;
+        const LNG = -90.5135118;
+        const ADDRESS_QUERY = encodeURIComponent("6ta Av 1-03 Zona 1 Frente al Tribunal Supremo Electoral Guatemala City");
+
+        function openGoogleMaps() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.open(`geo:${LAT},${LNG}?q=${ADDRESS_QUERY}`, '_blank');
+            } else {
+                window.open(`https://www.google.com/maps/search/?api=1&query=${ADDRESS_QUERY}`, '_blank');
+            }
+        }
+
+        function openWaze() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.open(`waze://?ll=${LAT},${LNG}&navigate=yes`, '_blank');
+            } else {
+                window.open(`https://waze.com/ul?ll=${LAT},${LNG}&navigate=yes`, '_blank');
+            }
+        }
+
+        function toggleOtherReasonField() {
+            const reasonSelect = document.getElementById('consultReason');
+            const otherContainer = document.getElementById('otherReasonContainer');
+            if (reasonSelect.value === 'Otra') {
+                otherContainer.classList.remove('d-none');
+            } else {
+                otherContainer.classList.add('d-none');
+            }
+        }
+
+        function selectSymptom(symptomValue) {
+            const select = document.getElementById('consultReason');
+            select.value = symptomValue;
+            toggleOtherReasonField();
+            document.getElementById('citas').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function sendFormViaWhatsApp() {
+            const parent = document.getElementById('parentName').value || 'No especificado';
+            const phone = document.getElementById('parentPhone').value || 'No especificado';
+            const child = document.getElementById('childName').value || 'No especificado';
+            const age = document.getElementById('childAge').value || 'No especificada';
+            let reason = document.getElementById('consultReason').value;
+            
+            if (reason === 'Otra') {
+                const otherText = document.getElementById('otherReasonText').value;
+                reason = `Otra: ${otherText || 'No especificado'}`;
+            }
+
+            const notes = document.getElementById('additionalNotes').value || 'Ninguna';
+
+            const message = `*SOLICITUD DE CITA MÉDICA*%0A` +
+                            `*Tutor:* ${encodeURIComponent(parent)}%0A` +
+                            `*Teléfono:* ${encodeURIComponent(phone)}%0A` +
+                            `*Paciente:* ${encodeURIComponent(child)} (${encodeURIComponent(age)})%0A` +
+                            `*Motivo:* ${encodeURIComponent(reason)}%0A` +
+                            `*Notas:* ${encodeURIComponent(notes)}`;
+
+            window.open(`https://wa.me/50222329243?text=${message}`, '_blank');
+        }
+
+        function toggleChatWindow() {
+            const chat = document.getElementById('chatWindow');
+            chat.style.display = (chat.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function appendMessage(text, sender) {
+            const chatBody = document.getElementById('chatBody');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `chat-msg ${sender}`;
+            msgDiv.innerHTML = text;
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function sendChatOption(optionText) {
+            appendMessage(optionText, 'user');
+            
+            setTimeout(() => {
+                let response = "";
+                if(optionText.includes('WhatsApp')) {
+                    response = "Puedes chatear directamente con nosotros en WhatsApp haciendo clic aquí: <br><a href='https://wa.me/50222329243' target='_blank' class='btn btn-sm btn-whatsapp mt-2'>Abrir WhatsApp (2232-9243)</a>";
+                } else if(optionText.includes('llegar') || optionText.includes('Ubicación')) {
+                    response = "Estamos en <strong>6ta Av 1-03 Zona 1, Frente al TSE</strong>.<br><br>Pulsas los botones de navegación:<br><button onclick='openGoogleMaps()' class='btn btn-sm btn-maps mt-2 me-1'>Google Maps</button> <button onclick='openWaze()' class='btn btn-sm btn-waze mt-2'>Waze</button>";
+                } else if(optionText.includes('Teléfonos')) {
+                    response = "Puedes llamar o escribir al <strong>2232-9243</strong>.<br>Para <strong>Emergencias 24/7</strong> llama al <strong>5804-1458</strong>.";
+                } else if(optionText.includes('Síntomas')) {
+                    response = "Atendemos padecimientos de la sangre y cáncer infantil: sangrados recurrentes (nariz/encías), moretones sin golpe, masas en el cuello o sospechas de enfermedades hematológicas.";
+                } else {
+                    response = "Gracias por comunicarte. Para atención directa te atendemos por WhatsApp al 2232-9243 o en emergencias al 5804-1458.";
+                }
+                appendMessage(response, 'bot');
+            }, 600);
+        }
+
+        function sendCustomMessage() {
+            const input = document.getElementById('chatInput');
+            const val = input.value.trim();
+            if(!val) return;
+
+            appendMessage(val, 'user');
+            input.value = '';
+
+            setTimeout(() => {
+                const textLower = val.toLowerCase();
+                let response = "Gracias por tu mensaje. Para darte la atención más precisa te invitamos a comunicarte por WhatsApp al <strong>2232-9243</strong>.";
+                
+                if(textLower.includes('whatsapp') || textLower.includes('chat')) {
+                    response = "<a href='https://wa.me/50222329243' target='_blank' class='btn btn-sm btn-whatsapp mt-1'>Haz clic para iniciar chat en WhatsApp</a>";
+                } else if(textLower.includes('como llegar') || textLower.includes('ubicacion') || textLower.includes('mapa') || textLower.includes('waze')) {
+                    response = "Ubicación: Zona 1 de Guatemala City. <br><button onclick='openGoogleMaps()' class='btn btn-sm btn-maps mt-2 me-1'>Google Maps</button><button onclick='openWaze()' class='btn btn-sm btn-waze mt-2'>Waze</button>";
+                } else if(textLower.includes('urgencia') || textLower.includes('emergencia')) {
+                    response = "⚠️ Emergencias médicas: por favor llama de inmediato al <strong>5804-1458</strong>.";
+                }
+                appendMessage(response, 'bot');
+            }, 700);
+        }
+
+        function handleChatKeyPress(e) {
+            if(e.key === 'Enter') sendCustomMessage();
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert("¡Gracias por enviar tu solicitud! Nos pondremos en contacto contigo a la brevedad.");
+            document.getElementById('appointmentForm').reset();
+            document.getElementById('otherReasonContainer').classList.add('d-none');
+        }
+    </script>
+</body>
+</html>
+
