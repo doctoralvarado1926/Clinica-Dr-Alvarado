@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://doctoralvarado1926.github.io/Clinica-Dr-Alvarado/sitemap.xml
